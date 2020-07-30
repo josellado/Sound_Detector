@@ -111,6 +111,9 @@ print ("Dividiendo DataFrame en X e y")
 X =np.concatenate((np.vstack(cafe.Sound),np.vstack(lavadora.Sound),np.vstack(aspiradora.Sound),np.vstack(thermomix.Sound)))
 y = np.concatenate((cafe.utensilio,lavadora.utensilio,aspiradora.utensilio,thermomix.utensilio))
 
+
+        
+
 print ("Empezando Bucle")
 
 while True:
@@ -160,7 +163,7 @@ while True:
     cafe_prueba2.shape
     npcafe = np.array(cafe_tf)   
     print(cafe_prueba)
-    model =  HistGradientBoostingClassifier()
+    model =  ExtraTreesClassifier()
     model.fit(X,y)
     y_pred=model.predict(cafe_prueba2)
     y_pref_sol.append(y_pred)
@@ -169,11 +172,12 @@ while True:
     os.getenv("Auto_Token"))
 
 
-    message = client.messages.create(
-    to = os.getenv("Cell_phone"),
-    from_ = os.getenv("Phone_number"),
-    body = f"El electrodomestico identificado es : {result[int(y_pref_sol[-1])]}")
+    num=["+34606515482"]
+    #num = ["+34606515482","+34685204379" ,"+34633367730", "+34690047684", "+34671195194", "+34676904516", "+34616668850", "+34678622892", "+34626405129" ,"+34628647658", "+34690210228", "+393471366691"]
 
+    for i in range(0,len(num)):
+        message = client.messages.create(to = num[i], from_=os.getenv("Phone_number"),
+                        body=f"El electrodomestico identificado es: {result[int(y_pref_sol[-1])]}")
     print(message.sid)
     
         #print(f" El electrodomestico identificado es : {result[int(y_pref_sol[-1])]}")
