@@ -186,3 +186,5 @@ while True:
     if orden =='para':
         break
         
+
+       # to = num[i]

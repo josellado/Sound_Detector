@@ -4,7 +4,7 @@ import os
 from twilio.rest import Client
 import dotenv
 dotenv.load_dotenv()
-#from audio import reconocedor_audio
+
 
 
 #def text_message():
@@ -26,5 +26,4 @@ print(message.sid)
 
 #for i in range(0,len(num)):
  #   message = client.messages.create(to = num[i], from_=os.getenv("Phone_number"),
-                        body=f"El electrodomestico identificado es safrdgr vf")
-#print(message.sid)
+                       
