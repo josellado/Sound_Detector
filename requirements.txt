@@ -4,7 +4,7 @@ Werkzeug==1.0.1
 seaborn==0.10.1
 numpy==1.19.0
 twilio==6.44.1
-Flask==1.1.2
+Flask==2.3.2
 pydub==0.24.1
 PyAudio==0.2.11
 pandas==1.0.5
